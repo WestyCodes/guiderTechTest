@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { MainPage } from './pages/MainPage';
 import FavouritesPage from './pages/FavouritesPage';
@@ -17,21 +17,21 @@ function App() {
         url: 'https://apod.nasa.gov/apod/image/1401/M83StarstreamGendlerS.jpg',
     };
 
-    // const [photo, setPhoto] = useState({})
+    const [photo, setPhoto] = useState({});
 
-    // async function getPhotoFromNasa() {
-    //     const photoData = await getPhoto()
-    //     setPhoto(photoData)
-    // }
+    useEffect(() => {
+        fetch(
+            'https://api.nasa.gov/planetary/apod?api_key=z6Bbf1PR8zgyIqDzVbxgdAEa6fPLGxf4ezArYdUa&count=1'
+        )
+            .then((response) => response.json())
+            .then((res) => setPhoto(res[0]));
+    }, []);
 
     return (
         <>
             <div>
                 <Routes>
-                    <Route
-                        path="/"
-                        element={<MainPage photoData={photoData} />}
-                    />
+                    <Route path="/" element={<MainPage photoData={photo} />} />
                     <Route path="/favourites" element={<FavouritesPage />} />
                 </Routes>
             </div>
