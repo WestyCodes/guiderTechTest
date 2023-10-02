@@ -34,7 +34,6 @@ export const FavouritesPage = (props: FavouritesPageProps) => {
                 }}
             >
                 {props.favouritePhotos.map((photo) => {
-                    console.log(photo);
                     return (
                         <Card>
                             <CardActionArea

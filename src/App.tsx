@@ -57,6 +57,7 @@ function App() {
     const [reloadPhoto, setReloadPhoto] = useState(false);
 
     useEffect(() => {
+        setFavouritePhotos(astroPhotos);
         fetch(
             'https://api.nasa.gov/planetary/apod?api_key=z6Bbf1PR8zgyIqDzVbxgdAEa6fPLGxf4ezArYdUa&count=1'
         )
