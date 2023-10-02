@@ -16,6 +16,23 @@ Create a simple web app that takes a picture from the NASA Astronomy Picture of 
 -   TypeScript
 -   MUI
 
+## Current State of the APP
+
+### Main page
+
+-   Main page retrieves a random picture from the NASA API and displays it with its title.
+-   Next button will grab a new random image
+-   Save button will add the current Photo Data to state (which will be updated to Redux eventually)
+-   Home navigates to "/" which is currently redundant
+-   Favourites navigates to "/favourites"
+
+### Favourites Page
+
+-   Grabs all photos from State from APP via props, and maps them out
+-   Click on an image to visit the HD Image in a new page
+-   Click home to go back to the home page
+-   Currently favourites page will NOT be updated with new saved photos, due to the nature of state/refresh and my useEffect. Was in process of setting up Redux when I ran out time.
+
 ## What I would have liked to add with extra time
 
 #### Redux Store
