@@ -1,10 +1,7 @@
 import { Container, Typography, Box, Paper, Button } from '@mui/material';
 
 type MainPageProps = {
-    photoData: {
-        title: string;
-        url: string;
-    };
+    photoData: any;
     setReloadPhoto: any;
     reloadPhoto: boolean;
     setFavouritePhotos: any;
