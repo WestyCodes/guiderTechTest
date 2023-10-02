@@ -5,9 +5,19 @@ type MainPageProps = {
         title: string;
         url: string;
     };
+    setReloadPhoto: any;
+    reloadPhoto: boolean;
 };
 
 export const MainPage = (props: MainPageProps) => {
+    function refreshPhoto() {
+        if (!props.reloadPhoto) {
+            props.setReloadPhoto(true);
+        } else {
+            props.setReloadPhoto(false);
+        }
+    }
+
     return (
         <Container>
             <Typography
@@ -47,7 +57,11 @@ export const MainPage = (props: MainPageProps) => {
                             alt={props.photoData.title + 'photo from nasa'}
                             src={props.photoData.url}
                         />
-                        <Button variant="contained" sx={{ mt: 2, mx: 2 }}>
+                        <Button
+                            variant="contained"
+                            sx={{ mt: 2, mx: 2 }}
+                            onClick={refreshPhoto}
+                        >
                             Next
                         </Button>
                         <Button variant="contained" sx={{ mt: 2, mx: 2 }}>
