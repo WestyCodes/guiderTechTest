@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 
 type FavouritesPageProps = {
-    favouritePhotos: [object];
+    favouritePhotos: any;
 };
 export const FavouritesPage = (props: FavouritesPageProps) => {
     return (
