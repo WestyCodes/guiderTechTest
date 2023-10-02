@@ -57,14 +57,12 @@ function App() {
     const [reloadPhoto, setReloadPhoto] = useState(false);
 
     useEffect(() => {
-        setFavouritePhotos(astroPhotos);
-        console.log(favouritePhotos);
         fetch(
             'https://api.nasa.gov/planetary/apod?api_key=z6Bbf1PR8zgyIqDzVbxgdAEa6fPLGxf4ezArYdUa&count=1'
         )
             .then((response) => response.json())
             .then((res) => setPhoto(res[0]));
-    }, [reloadPhoto, favouritePhotos]);
+    }, [reloadPhoto]);
 
     return (
         <>
@@ -77,6 +75,8 @@ function App() {
                                 photoData={photo}
                                 reloadPhoto={reloadPhoto}
                                 setReloadPhoto={setReloadPhoto}
+                                favouritePhotos={favouritePhotos}
+                                setFavouritePhotos={setFavouritePhotos}
                             />
                         }
                     />

@@ -7,9 +7,16 @@ type MainPageProps = {
     };
     setReloadPhoto: any;
     reloadPhoto: boolean;
+    setFavouritePhotos: any;
+    favouritePhotos: any;
 };
 
 export const MainPage = (props: MainPageProps) => {
+    function saveToFavourites() {
+        const favourites = props.favouritePhotos;
+        const newFavourites = [...favourites, props.photoData];
+        props.setFavouritePhotos(newFavourites);
+    }
     function refreshPhoto() {
         if (!props.reloadPhoto) {
             props.setReloadPhoto(true);
@@ -64,7 +71,11 @@ export const MainPage = (props: MainPageProps) => {
                         >
                             Next
                         </Button>
-                        <Button variant="contained" sx={{ mt: 2, mx: 2 }}>
+                        <Button
+                            variant="contained"
+                            sx={{ mt: 2, mx: 2 }}
+                            onClick={saveToFavourites}
+                        >
                             Save
                         </Button>
                     </Box>
