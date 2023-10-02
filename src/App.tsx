@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { MainPage } from './pages/MainPage';
 import { FavouritesPage } from './pages/FavouritesPage';
 import './App.css';
+import Header from './pages/Header';
 
 const astroPhotos = [
     {
@@ -67,6 +68,7 @@ function App() {
 
     return (
         <>
+            <Header />
             <div>
                 <Routes>
                     <Route
